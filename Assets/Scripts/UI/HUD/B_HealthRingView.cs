@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,19 +11,22 @@ public class B_HealthRingView : MonoBehaviour
     [SerializeField] private Image              _ringImage;
     [SerializeField] private SO_HealthBarConfig _config;
 
-    private float _targetFill = 1f;
+    private Coroutine _lerpCoroutine;
     #endregion
 
     #region 公開メソッド
     /// <summary>
-    /// HPの正規化済み割合（0〜1）でリングの充填量と色を更新します
+    /// HPの正規化済み割合（0〜1）でリングの充填量と色をアニメーション付きで更新します
     /// </summary>
     /// <param name="hpRatio">HP割合（0＝死亡, 1＝満タン）</param>
     public void UpdateRing(float hpRatio)
     {
-        _targetFill = Mathf.Clamp01(hpRatio);
-        ApplyFill();
+        float targetFill = Mathf.Clamp01(hpRatio);
         ApplyColor(hpRatio);
+
+        if (_lerpCoroutine != null)
+            StopCoroutine(_lerpCoroutine);
+        _lerpCoroutine = StartCoroutine(LerpFill(targetFill));
     }
     #endregion
 
@@ -36,10 +40,22 @@ public class B_HealthRingView : MonoBehaviour
             Debug.LogError("[B_HealthRingView] Image コンポーネントが見つかりません");
     }
 
-    private void ApplyFill()
+    private IEnumerator LerpFill(float targetFill)
     {
-        if (_ringImage == null) return;
-        _ringImage.fillAmount = _targetFill;
+        float speed     = _config != null ? _config.fillAnimSpeed : 6f;
+        float startFill = _ringImage.fillAmount;
+        float elapsed   = 0f;
+        float duration  = Mathf.Max(Mathf.Abs(targetFill - startFill) / speed, 0.016f);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            _ringImage.fillAmount = Mathf.Lerp(startFill, targetFill, elapsed / duration);
+            yield return null;
+        }
+
+        _ringImage.fillAmount = targetFill;
+        _lerpCoroutine = null;
     }
 
     private void ApplyColor(float ratio)

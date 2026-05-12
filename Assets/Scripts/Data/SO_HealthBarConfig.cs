@@ -17,6 +17,6 @@ public class SO_HealthBarConfig : ScriptableObject
     [SerializeField] public Color dangerColor  = new Color(0.9f, 0.15f, 0.15f, 1f);
 
     [Header("アニメーション")]
-    [SerializeField] public float fillAnimSpeed = 6f;
+    [SerializeField] public float fillAnimSpeed = 1f;
     #endregion
 }
