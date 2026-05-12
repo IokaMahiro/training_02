@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:www.gameuidatabase.com)",
-      "Bash(uloop get-hierarchy *)"
+      "Bash(uloop get-hierarchy *)",
+      "Bash(uloop execute-dynamic-code --code ' *)",
+      "Bash(uloop screenshot *)",
+      "Bash(uloop control-play-mode *)",
+      "Bash(uloop execute-dynamic-code *)",
+      "Bash(uloop get-logs *)",
+      "Bash(uloop clear-console *)"
     ]
   }
 }
