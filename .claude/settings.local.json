@@ -8,7 +8,9 @@
       "Bash(uloop control-play-mode *)",
       "Bash(uloop execute-dynamic-code *)",
       "Bash(uloop get-logs *)",
-      "Bash(uloop clear-console *)"
+      "Bash(uloop clear-console *)",
+      "Bash(uloop compile *)",
+      "Bash(uloop fix *)"
     ]
   }
 }
