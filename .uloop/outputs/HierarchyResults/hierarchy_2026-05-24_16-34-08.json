@@ -1,0 +1,35 @@
+{
+  "ExportTimestamp": "2026-05-24 16:34:08",
+  "Context": {
+    "sceneType": "editor",
+    "sceneName": "SampleScene",
+    "nodeCount": 1,
+    "maxDepth": 0
+  },
+  "Hierarchy": [
+    {
+      "sceneName": "SampleScene",
+      "stats": {
+        "rootCount": 1,
+        "nodeCount": 1,
+        "maxDepth": 0
+      },
+      "roots": [
+        {
+          "name": "Player",
+          "isActive": true,
+          "components": [
+            "Transform",
+            "B_PlayerHealth",
+            "B_PlayerWeapon",
+            "B_DebugWeaponHUD"
+          ],
+          "siblingIndex": 4,
+          "tag": "Untagged",
+          "layer": 0,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -10,7 +10,8 @@
       "Bash(uloop get-logs *)",
       "Bash(uloop clear-console *)",
       "Bash(uloop compile *)",
-      "Bash(uloop fix *)"
+      "Bash(uloop fix *)",
+      "Bash(uloop play-mode *)"
     ]
   }
 }
