@@ -11,7 +11,16 @@
       "Bash(uloop clear-console *)",
       "Bash(uloop compile *)",
       "Bash(uloop fix *)",
-      "Bash(uloop play-mode *)"
+      "Bash(uloop play-mode *)",
+      "Skill(uloop-screenshot)",
+      "Skill(uloop-screenshot:*)",
+      "Bash(python -c \"import json; d=json.load\\(open\\('.uloop/outputs/HierarchyResults/hierarchy_2026-05-28_19-26-07.json'\\)\\); [print\\(n['name']\\) for n in d['Hierarchy'][0]['roots']]\")",
+      "Bash(powershell -Command \"\\(Get-Content '.uloop/outputs/HierarchyResults/hierarchy_2026-05-28_19-26-07.json' | ConvertFrom-Json\\).Hierarchy[0].roots | Select-Object -ExpandProperty name\")",
+      "Bash(uloop --help)",
+      "Bash(uloop find-game-objects *)",
+      "Bash(uloop focus-window *)",
+      "Skill(uloop-compile)",
+      "Skill(uloop-compile:*)"
     ]
   }
 }

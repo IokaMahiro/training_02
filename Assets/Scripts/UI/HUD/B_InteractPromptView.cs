@@ -46,7 +46,7 @@ public class B_InteractPromptView : MonoBehaviour
     public void Hide()
     {
         _currentTarget = null;
-        _Panel.gameObject.SetActive(false);
+        //_Panel.gameObject.SetActive(false);
     }
     #endregion
 
