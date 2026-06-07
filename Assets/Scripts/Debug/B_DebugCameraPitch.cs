@@ -2,7 +2,8 @@ using UnityEngine;
 
 /// <summary>
 /// マウス上下でカメラのピッチを操作するデバッグ用コンポーネント。
-/// MainCamera にアタッチして B_SpinePitchIK の動作確認に使用します。
+/// MainCamera にアタッチして B_SpineLookIK のピッチ動作確認に使用します。
+/// ピッチ＋ヨーの両方を操作したい場合は B_DebugCameraLook を使用してください。
 /// </summary>
 public class B_DebugCameraPitch : MonoBehaviour
 {

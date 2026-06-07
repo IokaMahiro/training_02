@@ -20,7 +20,9 @@
       "Bash(uloop find-game-objects *)",
       "Bash(uloop focus-window *)",
       "Skill(uloop-compile)",
-      "Skill(uloop-compile:*)"
+      "Skill(uloop-compile:*)",
+      "Bash(del \"C:\\\\Users\\\\mahir\\\\UnityProject\\\\Chainsaw_02\\\\Assets\\\\Scripts\\\\IK\\\\B_SpinePitchIK.cs\")",
+      "Bash(del \"C:\\\\Users\\\\mahir\\\\UnityProject\\\\Chainsaw_02\\\\Assets\\\\Scripts\\\\IK\\\\B_SpinePitchIK.cs.meta\")"
     ]
   }
 }
